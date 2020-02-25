@@ -1,0 +1,36 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Cloth Picker</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse pull-right" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/user/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/user/upload">Upload</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/user/bookmark">Bookmark</a>
+        </li>
+      </ul>
+      
+      <ul class="navbar-nav pull-right">
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="user-image">
+              {{this.user.name}} 
+              <img [src]="user.image" *ngIf="user.image" alt="User image">
+            </a>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <button class="dropdown-item" (click)="login_component.logout()">Logout</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

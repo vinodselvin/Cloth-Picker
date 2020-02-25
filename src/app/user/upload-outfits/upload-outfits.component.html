@@ -1,0 +1,44 @@
+<section class="py-5 jumbotron text-center">
+  <div class="container">
+    <h1>Upload Your Outfits</h1>
+    <p class="lead text-muted">Select the type of outfit and then select the files and then click on upload button</p>
+    <div class="upload-section">
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-lg-6 col-center">
+          <div class="input-group mb-3">
+            <select class="custom-select" id="outfitType" (change)="fileUpload.click()">
+              <option value="1">Shirts/ T-Shirts</option>
+              <option value="2">Pants</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-sm-12 col-lg-6">
+          <div class="custom-file mb-3">
+            <input type="file" class="custom-file-input" id="customFile" #fileUpload (change)="fileChangeEvent($event)" multiple="multiple" accept="image/*">
+            <label class="custom-file-label text-left" for="customFile" >Choose file</label>
+          </div>
+        </div>
+      </div>
+      <!-- Image preview before upload -->
+      <div class="row justify-content-center mb-3">
+        <div *ngFor="let eSrc of imageSrc | keyvalue;" class="col-sm-4 dress">
+          <img [src]="eSrc.value" alt="" class="e_image" />
+          <i class="fa fa-times pull-right" (click)="removeFile(eSrc)"> Cancel </i>
+        </div>
+      </div>
+      <!-- End Image preview -->
+      <div *ngIf="imageSrc && imageSrc.length > 0" class="row justify-content-center">
+        <div class="col-sm-12 col-lg-6">
+          <div class="input-group mb-3">
+            <button class="btn btn-primary btn-block" (click)="saveFiles()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+
+</section>

@@ -1,0 +1,26 @@
+<div class="album py-5 mb-3" *ngIf="this.bookmarks != null">
+  <div class="container" [hidden]="this.bookmarks.length == 0" *ngIf="this.bookmarks">
+    <h3>List of Bookmarks</h3>
+    <div class="row justify-content-center">
+      <div class="col-lg-4" *ngFor="let bookmark of this.bookmarks">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <div class="row mb-3" [id]="this.bookmark['1']+this.bookmark['2']">
+              <div class="dress"><img class="col-lg-12 col-sm-12" [src]="this.images['1'][this.bookmark['1']].image_data"/></div>
+              <div class="dress"><img class="col-lg-12 col-sm-12" [src]="this.images['2'][this.bookmark['2']].image_data"/></div>
+              <div class="" (click)="shareFiles(this.bookmark['1']+this.bookmark['2'])"><i class="fa fa-share"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center" [hidden]="this.bookmarks.length > 0" *ngIf="this.bookmarks.length == 0">
+    <h3 class="text-center">There is no data available in bookmark</h3>
+    <p>try below navigation</p>
+    <button class="btn btn-primary" routerLink="/user/upload" style="margin-right: 10px;"><i class="fa fa-cloud-upload"></i> Upload Outfits</button> 
+  </div>
+</div>
+<div class="album py-5 mb-3">
+  <div class="loader" *ngIf="this.bookmarks == null"></div>
+</div>
