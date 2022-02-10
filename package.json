@@ -28,7 +28,7 @@
     "firebase": "^5.11.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "npm": "^6.13.7",
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.3.3",
